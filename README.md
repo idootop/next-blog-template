@@ -1,3 +1,3 @@
-# Next typescript template
+# Next blog template
 
-⚡️ A simple next typescript template.
+⚡️ A simple next blog template.
