@@ -89,7 +89,8 @@ export function toSet<T = any>(datas: T[], byKey?: (e: T) => any) {
   return Array.from(new Set(datas));
 }
 
-export function jsonEncode(obj: any, prettier = false) {
+export function jsonEncode(obj: any, options?: { prettier?: boolean }) {
+  const { prettier } = options ?? {};
   try {
     return prettier ? JSON.stringify(obj, undefined, 4) : JSON.stringify(obj);
   } catch (error) {
