@@ -1,26 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import type { MDXComponents } from 'mdx/types';
 
-import { Text } from './core/components/Text';
-import { isEmpty } from './core/utils/is';
+import { isNotEmpty } from './core/utils/is';
 
 // This file is required to use MDX in `app` directory.
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
     img: ({ src, alt }) => {
-      const _img = (
-        <img
-          src={src}
-          alt={alt}
-          style={{
-            objectFit: 'contain',
-          }}
-        />
-      );
-      return isEmpty(alt) ? (
-        _img
-      ) : (
+      return (
         <span
           style={{
             width: '100%',
@@ -29,10 +17,26 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             alignItems: 'center',
           }}
         >
-          {_img}
-          <Text marginTop="10px" color="#363636">
-            {alt}
-          </Text>
+          <img
+            src={src}
+            alt={alt}
+            data-zoomable
+            style={{
+              objectFit: 'contain',
+            }}
+          />
+          {isNotEmpty(alt) && (
+            <span
+              style={{
+                color: '#666',
+                fontSize: '12px',
+                textAlign: 'center',
+                marginTop: '10px',
+              }}
+            >
+              {alt}
+            </span>
+          )}
         </span>
       );
     },
