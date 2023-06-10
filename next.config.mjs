@@ -15,9 +15,6 @@ const withMDX = NextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 };
 
