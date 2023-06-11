@@ -3,9 +3,8 @@
 import mediumZoom from 'medium-zoom';
 import { useEffect } from 'react';
 
-export const ImageZoom = () => {
+export const ImageZoom: any = () => {
   useEffect(() => {
     mediumZoom('[data-zoomable]');
   }, []);
-  return <span />;
 };

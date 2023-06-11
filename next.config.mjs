@@ -1,21 +1,14 @@
-import NextMDX from '@next/mdx';
-import rehypeHighlight from 'rehype-highlight';
-import rehypeKatex from 'rehype-katex';
-import { remarkHeadingId } from 'remark-custom-heading-id';
-import remarkGfm from 'remark-gfm';
-import remarkMath from 'remark-math';
-
-const withMDX = NextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkHeadingId, remarkGfm, remarkMath],
-    rehypePlugins: [rehypeHighlight, rehypeKatex],
-  },
-});
+import { withContentlayer } from 'next-contentlayer';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  output: 'export',
+  webpack: config => {
+    config.infrastructureLogging = {
+      level: 'error',
+    };
+    return config;
+  },
 };
 
-export default withMDX(nextConfig);
+export default withContentlayer(nextConfig);
