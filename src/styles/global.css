@@ -19,3 +19,25 @@ div:focus {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.bannerImage {
+  width: 100vw;
+  padding: 0 24px;
+  max-width: 1024px !important;
+  position: absolute;
+}
+
+.bannerImage img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+@media (max-width: 767px) {
+  .bannerImage {
+    padding: 0;
+  }
+  .bannerImage img {
+    border-radius: 0 !important;
+  }
+}

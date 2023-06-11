@@ -2,6 +2,7 @@ import '@/src/styles/reset.css';
 import '@/src/styles/global.css';
 
 export const metadata = {
+  referrer: 'no-referrer',
   title: 'Next typescript template',
   description: 'A simple next typescript template',
   viewport:
