@@ -28,8 +28,8 @@
 .markdown-body h6 {
   line-height: 1.5;
   margin-top: 35px;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
+  margin-bottom: 15px;
+  padding-bottom: 0 !important;
   border: none;
 }
 .markdown-body h1 {
@@ -40,7 +40,6 @@
 .markdown-body h2 {
   font-size: 22px;
   line-height: 34px;
-  padding-bottom: 12px;
 }
 .markdown-body h3 {
   font-size: 20px;

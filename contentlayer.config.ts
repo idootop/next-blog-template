@@ -8,6 +8,7 @@ import rehypeKatex from 'rehype-katex';
 import { remarkHeadingId } from 'remark-custom-heading-id';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
+import remarkSlug from 'remark-slug';
 
 const baseComputedFields: ComputedFields = {
   slug: {
@@ -75,7 +76,7 @@ export default makeSource({
   contentDirPath: './content',
   documentTypes: [Page, Post],
   mdx: {
-    remarkPlugins: [remarkHeadingId, remarkGfm, remarkMath],
+    remarkPlugins: [remarkSlug, remarkHeadingId, remarkGfm, remarkMath],
     rehypePlugins: [rehypeHighlight, rehypeKatex],
   },
 });

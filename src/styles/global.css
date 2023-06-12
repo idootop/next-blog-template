@@ -11,6 +11,8 @@ div:focus {
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 }
 
+/* hide-scrollbar */
+
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -20,24 +22,56 @@ div:focus {
   display: none;
 }
 
-.bannerImage {
+/* banner-image */
+
+.banner-image {
   width: 100vw;
   padding: 0 24px;
   max-width: 1024px !important;
   position: absolute;
 }
 
-.bannerImage img {
+.banner-image img {
   width: 100%;
   object-fit: cover;
   border-radius: 14px;
 }
 
 @media (max-width: 767px) {
-  .bannerImage {
+  .banner-image {
     padding: 0;
   }
-  .bannerImage img {
+  .banner-image img {
     border-radius: 0 !important;
   }
+}
+
+/* heading-anchor */
+
+.heading-anchor {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  cursor: pointer;
+  font-size: 16px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s ease 0s, text-decoration 0.2s ease 0s !important;
+}
+
+.heading-anchor::before {
+  content: '#';
+}
+
+[id]:is(h1, h2, h3, h4, h5, h6):hover .heading-anchor {
+  opacity: 1;
+}
+
+[id]:is(h1, h2, h3, h4, h5, h6):hover {
+  padding-left: 0.6em;
+}
+[id]:is(h1, h2, h3, h4, h5, h6) {
+  position: relative;
+  transition: padding 0.2s ease 0s;
+  scroll-margin-top: 1rem;
 }

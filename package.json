@@ -46,6 +46,7 @@
     "remark-custom-heading-id": "^1.0.1",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
+    "remark-slug": "^7.0.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"

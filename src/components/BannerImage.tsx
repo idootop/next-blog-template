@@ -1,5 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
-
 'use client';
 
 import { useBoxSize } from '@/core/hooks/useBoxSize';
@@ -18,7 +16,7 @@ export const BannerImage = (props: { src: string; alt?: string }) => {
         justifyContent: 'center',
       }}
     >
-      <div className="bannerImage" ref={boxRef}>
+      <div className="banner-image" ref={boxRef}>
         <BaseImage src={src} alt={alt} />
       </div>
       <div
