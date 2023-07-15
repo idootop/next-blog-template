@@ -1,14 +1,19 @@
-import { withContentlayer } from 'next-contentlayer';
+import configMDX from '@next/mdx';
+import rehypeHighlight from 'rehype-highlight';
+import remarkGfm from 'remark-gfm';
+
+const withMDX = configMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [rehypeHighlight],
+  },
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  webpack: config => {
-    config.infrastructureLogging = {
-      level: 'error',
-    };
-    return config;
-  },
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
 };
 
-export default withContentlayer(nextConfig);
+export default withMDX(nextConfig);

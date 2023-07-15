@@ -1,9 +1,9 @@
----
-title: Markdown Cheat Sheet
-date: '2023-06-11'
----
+export const metadata = {
+  title: 'Markdown Cheat Sheet',
+  date: '2023-06-11',
+};
 
-import { BannerImage } from '@/src/components/BannerImage';
+import { BannerImage } from '@/src/components/Image/BannerImage.tsx';
 
 # Markdown Cheat Sheet
 
@@ -116,7 +116,7 @@ Here's a sentence with a footnote. [^1]
 
 ### Heading ID
 
-### My Great Heading {#custom-id}
+### My Great Heading
 
 ### Strikethrough
 
@@ -127,9 +127,3 @@ Here's a sentence with a footnote. [^1]
 - [x] Write the press release
 - [ ] Update the website
 - [ ] Contact the media
-
-### Math
-
-$$
-f(x) = \int_{-\infty}^\infty  \hat f(x)\xi\,e^{2 \pi i \xi x}  \,\mathrm{d}\xi
-$$
