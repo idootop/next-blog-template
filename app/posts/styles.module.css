@@ -1,0 +1,19 @@
+.title {
+  font-size: 36px !important;
+}
+
+.date {
+  font-size: 15px !important;
+  color: rgba(0, 0, 0, 0.3);
+  margin-top: 10px !important;
+}
+
+@media (max-width: 720px) {
+  .title {
+    font-size: 28px !important;
+  }
+
+  .date {
+    font-size: 14px !important;
+  }
+}

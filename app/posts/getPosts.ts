@@ -19,16 +19,15 @@ export const getPosts = async (): Promise<Post[]> => {
   );
 };
 
-export const getPost = async (slug: string): Promise<Post | undefined> => {
-  let post;
+export const getPost = (slug: string): Post | undefined => {
   try {
-    post = require(`./${slug}/page.mdx`);
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const post = require(`./${slug}/page.mdx`);
+    return {
+      slug,
+      ...post.metadata,
+    };
   } catch {
     return;
   }
-
-  return {
-    slug,
-    ...post.metadata,
-  };
 };
