@@ -39,3 +39,6 @@ next-env.d.ts
 .DS_Store
 .*cache
 .contentlayer
+
+# contentlayer
+.contentlayer
