@@ -54,7 +54,6 @@ const PostItem = (props: { post: Post }) => {
       href={post.slug}
       style={{
         width: '100%',
-        textDecoration: 'none',
       }}
     >
       <Row alignItems="center" width="100%">

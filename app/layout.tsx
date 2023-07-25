@@ -1,6 +1,8 @@
 import '@/src/styles/reset.css';
 import '@/src/styles/global.css';
 
+import { Header } from './header';
+
 export const metadata = {
   referrer: 'no-referrer',
   title: 'Next typescript template',
@@ -12,7 +14,10 @@ export const metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

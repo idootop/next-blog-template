@@ -12,3 +12,7 @@ p:focus,
 div:focus {
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
 }
+
+a {
+  text-decoration: none !important;
+}
