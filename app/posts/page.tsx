@@ -4,16 +4,11 @@ import Link from 'next/link';
 import { Column, Expand, Row } from '@/core/components/Flex';
 
 import { allPostsByYear, YearPosts } from './allPostsByYear';
+import styles from './styles.module.css';
 
 export default async function Page() {
   return (
-    <Column
-      width="100%"
-      style={{
-        margin: '0 auto',
-        width: '',
-      }}
-    >
+    <Column className={styles.page}>
       {allPostsByYear.map(e => {
         return <YearPost key={e.year} year={e.year} posts={e.posts} />;
       })}
@@ -24,14 +19,26 @@ export default async function Page() {
 const YearPost = (props: YearPosts) => {
   const { year, posts } = props;
   return (
-    <Column width="100%" alignItems="start">
-      <h1
+    <Column
+      className={styles.year}
+      alignItems="start"
+      style={{
+        width: '100%',
+        padding: '20px',
+        background: '#fff',
+        borderRadius: '2px',
+        boxShadow: '0 1px 2px -1px rgba(0, 0, 0, 0.08)',
+      }}
+    >
+      <span
         style={{
+          fontSize: '18px',
+          fontWeight: '400',
           color: 'rgba(0, 0, 0, 0.3)',
         }}
       >
         {year}
-      </h1>
+      </span>
       {posts.map(post => {
         return <PostItem key={post.title} post={post} />;
       })}
@@ -43,19 +50,29 @@ const PostItem = (props: { post: Post }) => {
   const { post } = props;
   return (
     <Link
+      className={styles.post}
       href={post.slug}
       style={{
         width: '100%',
-        color: '#000',
         textDecoration: 'none',
       }}
     >
       <Row alignItems="center" width="100%">
-        <Expand>
-          <h1>{post.title}</h1>
+        <Expand marginRight="10px">
+          <span
+            style={{
+              fontSize: '18px',
+              fontWeight: '500',
+              color: '#000',
+            }}
+          >
+            {post.title}
+          </span>
         </Expand>
         <span
           style={{
+            fontSize: '15px',
+            fontWeight: '400',
             color: 'rgba(0, 0, 0, 0.3)',
           }}
         >

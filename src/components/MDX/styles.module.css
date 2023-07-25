@@ -5,10 +5,10 @@
 .date {
   font-size: 15px !important;
   color: rgba(0, 0, 0, 0.3);
-  margin-top: 10px !important;
+  margin-top: 4px !important;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1024px) {
   .title {
     font-size: 28px !important;
   }
