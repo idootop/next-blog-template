@@ -61,7 +61,7 @@ const PostItem = (props: { post: Post }) => {
           <span
             style={{
               fontSize: '18px',
-              fontWeight: '500',
+              fontWeight: '400',
               color: '#000',
             }}
           >

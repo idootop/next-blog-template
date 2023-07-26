@@ -108,11 +108,11 @@
 }
 .markdown-body a {
   text-decoration: none;
-  color: #0269c8;
+  color: #2f6eeb;
 }
 .markdown-body a:active,
 .markdown-body a:hover {
-  color: #275b8c;
+  text-decoration: underline !important;
 }
 .markdown-body table {
   display: inline-block !important;
