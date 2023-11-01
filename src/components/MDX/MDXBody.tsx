@@ -1,19 +1,29 @@
 // Markdown
-import 'github-markdown-css/github-markdown-light.css';
 import './markdown.css';
+import './prism.css';
 import './highlight.css';
 
 import type { MDXComponents } from 'mdx/types';
+import Link from 'next/link';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
-import { ImageZoom } from '@/src/components/Image/ImageZoom';
-
+import { CodeCard } from '../Code/CodeCard';
 import { BannerImage } from '../Image/BannerImage';
 import { BaseImage } from '../Image/BaseImage';
 
 const components: MDXComponents = {
+  a: ({ href, children }) => {
+    return (
+      <Link href={href ?? '#'} target="_blank">
+        {children}
+      </Link>
+    );
+  },
   img: ({ src, alt }) => {
-    return <BaseImage src={src} alt={alt} zoomable />;
+    return <BaseImage src={src} alt={alt} />;
+  },
+  pre: ({ children }) => {
+    return <CodeCard>{children}</CodeCard>;
   },
   BannerImage,
 };
@@ -30,7 +40,6 @@ export function MDXBody(props: { children: string }) {
       }}
     >
       <Component components={components as any} />
-      <ImageZoom />
     </article>
   );
 }
