@@ -20,7 +20,15 @@ export const Header = () => {
       }}
     >
       <Link href="/">
-        <Image src="/favicon.ico" width={32} height={32} alt="" />
+        <Image
+          src="/logo.svg"
+          width={32}
+          height={32}
+          alt=""
+          style={{
+            borderRadius: '50%',
+          }}
+        />
       </Link>
       <Expand width="100%" alignItems="center" justifyContent="center">
         <HearLink href="/">首页</HearLink>
