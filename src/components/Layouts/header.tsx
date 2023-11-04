@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 
 import { Expand } from '@/core/components/Flex';
 
+import { kPageMaxWidth, kPagePadding } from './sizes';
 import styles from './styles.module.css';
 
 export const Header = () => {
@@ -15,8 +16,11 @@ export const Header = () => {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        padding: '20px',
+        justifyContent: 'center',
         width: '100%',
+        margin: '0 auto',
+        padding: kPagePadding,
+        maxWidth: kPageMaxWidth,
       }}
     >
       <Link href="/">
@@ -57,7 +61,7 @@ const HearLink = (props: { href: string; children: any }) => {
       href={href}
       style={{
         fontSize: '16px',
-        color: active ? 'rgba(0, 0, 0, 0.3)' : undefined,
+        color: !active ? 'rgba(0, 0, 0, 0.3)' : undefined,
         fontWeight: active ? '500' : undefined,
       }}
     >
